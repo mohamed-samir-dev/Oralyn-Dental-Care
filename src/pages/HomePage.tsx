@@ -10,7 +10,7 @@ import {
   CommittedHealth,
   Testimonials,
   Doctors,
-} from "../components";
+} from "../components/index";
 
 const HomePage: React.FC = () => {
   return (
@@ -25,4 +25,3 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
-

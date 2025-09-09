@@ -6,21 +6,21 @@
 // =============================================================================
 // LAYOUT COMPONENTS
 // =============================================================================
-export { Header } from "./Header/Header";
+export { Header } from "./components/Header/Header";
 
 // =============================================================================
 // PAGE COMPONENTS
 // =============================================================================
-export { default as Home } from "./Home/Home";
-export { default as Service } from "./service/Service";
-export { default as CommittedHealth } from "./Committed-health/Committed-health";
+export { default as Home } from "./components/Home/Home";
+export { default as Service } from "./components/service/Service";
+export { default as CommittedHealth } from "./components/Committed-health/Committed-health";
 
 // =============================================================================
 // FEATURE COMPONENTS
 // =============================================================================
-export { Analysis } from "./Analysis/Analysis";
-export { default as Testimonials } from "./Testimonials/Testimonials";
-export { default as Doctors } from "./Doctors/Doctors";
-export { default as DoctorProfile } from "./Doctors/DoctorProfile";
-export { default as Contact } from "./Contact/Contact";
-export { default as Footer } from "./Footer/Footer";
+export { Analysis } from "./components/Analysis/Analysis";
+export { default as Testimonials } from "./components/Testimonials/Testimonials";
+export { default as Doctors } from "./components/Doctors/Doctors";
+export { default as DoctorProfile } from "./components/Doctors/DoctorProfile";
+export { default as Contact } from "./components/Contact/Contact";
+export { default as Footer } from "./components/Footer/Footer";

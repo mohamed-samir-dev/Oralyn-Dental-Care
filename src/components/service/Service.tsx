@@ -1,6 +1,6 @@
 import React from "react";
 import "./Service.css";
-import type { ServiceProps } from "../../types";
+import type { ServiceProps } from "../../types/index";
 import { SERVICES_DATA } from "../../constants";
 
 /**
@@ -19,8 +19,6 @@ const Service: React.FC<ServiceProps> = ({ className = "" }) => {
       <div className="container">
         {/* Service Header Section */}
         <header className="service-header">
-          
-
           <h2 id="services-heading" className="service-title">
             Transform Your Smile with Expert Care
           </h2>
@@ -34,7 +32,6 @@ const Service: React.FC<ServiceProps> = ({ className = "" }) => {
           <button className="cta-btn" aria-label="Explore our dental services">
             Explore Our Services →
           </button>
-        
         </header>
 
         {/* Service Cards Section */}

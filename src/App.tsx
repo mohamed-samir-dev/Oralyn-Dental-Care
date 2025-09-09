@@ -1,6 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Header, Home, Service, Testimonials, Doctors, DoctorProfile, Contact, Footer } from "./components";
+import {
+  Header,
+  Home,
+  Service,
+  Testimonials,
+  Doctors,
+  DoctorProfile,
+  Contact,
+  Footer,
+} from "./components/index";
 import { HomePage } from "./pages";
 import { APP_CONFIG } from "./constants";
 
