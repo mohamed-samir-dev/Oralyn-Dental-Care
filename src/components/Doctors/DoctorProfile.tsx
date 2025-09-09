@@ -55,7 +55,7 @@ const DoctorProfile: React.FC = () => {
     return (
       <div className="doctor-not-found">
         <h2>{t.doctorNotFound}</h2>
-        <button onClick={() => navigate("/doctors")}>{t.backToDoctors}</button>
+        <button className="back-btn" onClick={() => navigate("/doctors")}>{t.backToDoctors}</button>
       </div>
     );
   }

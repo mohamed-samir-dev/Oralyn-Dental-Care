@@ -183,3 +183,20 @@
     flex-direction: column;
   }
 }
+
+.back-btn {
+  background: none;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  margin-top:20px;
+}
+
+.back-btn:hover {
+  background: var(--color-primary);
+  color: white;
+}

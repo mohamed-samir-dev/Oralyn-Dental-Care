@@ -3,7 +3,7 @@
  * Centralized configuration and constant values
  */
 
-import type { ServiceItem } from "../types";
+import type { ServiceItem } from "../types/index";
 
 // Application Configuration
 export const APP_CONFIG = {
@@ -24,7 +24,7 @@ interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Sarah Ali",
     title: "Marketing Director",
     text: "The team at Oralyn transformed my smile with their advanced cosmetic dentistry. The attention to detail and personalized care exceeded all my expectations. I couldn't be happier with the results!",
     rating: 4,
@@ -33,7 +33,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Dr. Michael Chen",
+    name: "Dr. Mohammed Samier",
     title: "Pediatrician",
     text: "As a healthcare professional myself, I appreciate the cutting-edge technology and evidence-based approach at Oralyn. The implant procedure was seamless, and the follow-up care was exceptional.",
     rating: 5,
@@ -43,7 +43,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
+    name: " Gehad Salem",
     title: "Business Owner",
     text: "The orthodontic treatment I received was life-changing. The team made the entire process comfortable and convenient. My confidence has soared since completing my treatment here.",
     rating: 5,
