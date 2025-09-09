@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Doctors.css";
-import { doctors } from "./doctorsData";
+import { doctors } from "./doctorsData.ts";
 
 const Doctors: React.FC = () => {
   const navigate = useNavigate();
@@ -121,7 +121,6 @@ const Doctors: React.FC = () => {
                 </div>
 
                 <div className="card-actions">
-                 
                   <button
                     className="secondary-action-btn"
                     onClick={() => handleViewProfile(doctor.id)}

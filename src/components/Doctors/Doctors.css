@@ -1,11 +1,13 @@
 .doctors-section {
-  padding: 100px 0;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
   position: relative;
   overflow: hidden;
   border-radius: 30px;
   margin: 0 auto;
   max-width: 1400px;
+  margin-top: 30px;
+  padding: 40px 0;
+
 }
 
 
@@ -296,35 +298,32 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 1024px) {
-  .stats-row {
-    gap: 40px;
+@media (max-width: 1200px) {
+  .doctors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 
-  .stat-number {
-    font-size: 2rem;
+  .doctor-image {
+    height: 300px;
+  }
+
+  .doctor-info {
+    padding: 35px 25px;
   }
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
   .doctors-section {
-    padding: 80px 0;
+    border-radius: 20px;
+    padding: 30px 0;
+    margin-top: 20px;
   }
 
   .doctors-grid {
     grid-template-columns: 1fr;
     gap: 30px;
-    padding: 0 20px;
-  }
-
-  .stats-row {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .doctor-card {
-    max-width: 400px;
-    margin: 0 auto;
   }
 
   .doctor-image {
@@ -332,29 +331,47 @@
   }
 
   .doctor-info {
-    padding: 30px 25px;
+    padding: 30px 20px;
   }
 
   .card-actions {
     flex-direction: column;
   }
+
+  .doctors-description {
+    font-size: 16px;
+  }
+
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 }
 
 @media (max-width: 480px) {
-  .doctors-grid {
-    padding: 0 15px;
+  .doctors-section {
+    border-radius: 15px;
+    padding: 20px 0;
+  }
+
+  .doctor-image {
+    height: 250px;
   }
 
   .doctor-info {
-    padding: 25px 20px;
+    padding: 25px 15px;
   }
 
-  .doctor-name {
-    font-size: 1.3rem;
+  .view-profile-btn,
+  .quick-contact-btn {
+    padding: 12px 20px;
+    font-size: 14px;
   }
 
-  .achievement-badge {
-    font-size: 10px;
-    padding: 6px 10px;
+  .experience-badge {
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    font-size: 11px;
   }
 }

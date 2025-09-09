@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { doctors } from "./doctorsData";
+import { doctors } from "./doctorsData.ts";
 import "./DoctorProfile.css";
 
 const DoctorProfile: React.FC = () => {

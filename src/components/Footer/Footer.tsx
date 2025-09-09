@@ -5,25 +5,7 @@ import "./Footer.css";
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <div className="footer-hero">
-        <div className="hero-image">
-          <img src="/dentist-674654_1280.jpg" alt="Dental Care" />
-        </div>
-        <div className="hero-overlay">
-          <div className="container">
-            <div className="hero-content">
-              <h3>Ready to Transform Your Smile?</h3>
-              <p>
-                Book your consultation today and take the first step toward
-                optimal dental health.
-              </p>
-              <Link to="/contact" className="cta-button">
-                Schedule Appointment
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
       <div className="footer-main">
         <div className="container">
