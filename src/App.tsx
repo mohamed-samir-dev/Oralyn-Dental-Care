@@ -9,9 +9,10 @@ import {
   DoctorProfile,
   Contact,
   Footer,
-} from "./components/index";
+} from "./components";
 import { HomePage } from "./pages";
 import { APP_CONFIG } from "./constants";
+import { LanguageProvider } from "./contexts/LanguageContext.tsx";
 
 /**
  * Main Application Component
@@ -19,28 +20,30 @@ import { APP_CONFIG } from "./constants";
  */
 const App: React.FC = () => {
   return (
-    <Router>
-      <Header />
-      <main role="main" aria-label={`${APP_CONFIG.name} Main Content`}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<Home />} />
-          <Route
-            path="/services"
-            element={
-              <>
-                <Service />
-                <Testimonials />
-              </>
-            }
-          />
-          <Route path="/doctors" element={<Doctors />} />
-          <Route path="/doctors/:id" element={<DoctorProfile />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <Header />
+        <main role="main" aria-label={`${APP_CONFIG.name} Main Content`}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<Home />} />
+            <Route
+              path="/services"
+              element={
+                <>
+                  <Service />
+                  <Testimonials />
+                </>
+              }
+            />
+            <Route path="/doctors" element={<Doctors />} />
+            <Route path="/doctors/:id" element={<DoctorProfile />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </LanguageProvider>
   );
 };
 

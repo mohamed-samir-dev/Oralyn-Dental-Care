@@ -1,8 +1,12 @@
 import "./Testimonials.css";
 import { testimonials } from "../../constants";
 import { useTestimonials } from "../../hooks/Testimonial";
+import { useLanguage } from "../../contexts/useLanguage";
+import { translations } from "../../constants/translations";
 
 const Testimonials: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const {
     currentIndex,
     setCurrentIndex,
@@ -11,6 +15,42 @@ const Testimonials: React.FC = () => {
     current,
   } = useTestimonials();
 
+  const getTranslatedTestimonialText = (id: number) => {
+    switch (id) {
+      case 1: return t.sarahTestimonial;
+      case 2: return t.testimonialText;
+      case 3: return t.emilyTestimonial;
+      default: return current.text;
+    }
+  };
+
+  const getTranslatedTestimonialName = (id: number) => {
+    switch (id) {
+      case 1: return t.sarahJohnson;
+      case 2: return t.drMichaelChen;
+      case 3: return t.emilyRodriguez;
+      default: return current.name;
+    }
+  };
+
+  const getTranslatedTestimonialTitle = (id: number) => {
+    switch (id) {
+      case 1: return t.marketingDirector;
+      case 2: return t.pediatrician;
+      case 3: return t.businessOwner;
+      default: return current.title;
+    }
+  };
+
+  const getTranslatedTestimonialTreatment = (id: number) => {
+    switch (id) {
+      case 1: return t.cosmeticDentistry;
+      case 2: return t.dentalImplants;
+      case 3: return t.orthodontics;
+      default: return current.treatment;
+    }
+  };
+
   return (
     <section
       className="testimonials-section"
@@ -18,13 +58,12 @@ const Testimonials: React.FC = () => {
     >
       <div className="container">
         <div className="testimonials-header">
-          <p className="testimonials-subtitle">Patient Stories</p>
+          <p className="testimonials-subtitle">{t.patientStories}</p>
           <h2 id="testimonials-heading" className="testimonials-title">
-            Transforming Smiles, Changing Lives
+            {t.transformingLives}
           </h2>
           <p className="testimonials-description">
-            Discover why thousands of patients trust Oralyn for their dental
-            care
+            {t.testimonialSubtitle}
           </p>
         </div>
 
@@ -57,16 +96,24 @@ const Testimonials: React.FC = () => {
                 ))}
               </div>
 
-              <p className="testimonial-text">{current.text}</p>
+              <p className="testimonial-text">
+                {language === 'ar' ? getTranslatedTestimonialText(current.id) : current.text}
+              </p>
 
               <div className="patient-info">
                 <div className="patient-avatar">
                   <img src={current.image} alt={current.name} />
                 </div>
                 <div className="patient-details">
-                  <h3 className="patient-name">{current.name}</h3>
-                  <p className="patient-title">{current.title}</p>
-                  <span className="treatment-badge">{current.treatment}</span>
+                  <h3 className="patient-name">
+                    {language === 'ar' ? getTranslatedTestimonialName(current.id) : current.name}
+                  </h3>
+                  <p className="patient-title">
+                    {language === 'ar' ? getTranslatedTestimonialTitle(current.id) : current.title}
+                  </p>
+                  <span className="treatment-badge">
+                    {language === 'ar' ? getTranslatedTestimonialTreatment(current.id) : current.treatment}
+                  </span>
                 </div>
               </div>
             </div>

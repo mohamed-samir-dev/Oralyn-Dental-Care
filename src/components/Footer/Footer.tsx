@@ -1,24 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import { useLanguage } from "../../contexts/useLanguage";
+import { translations } from "../../constants/translations.ts";
 
 const Footer: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <footer className="footer">
-     
-
       <div className="footer-main">
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
               <div className="footer-logo">
                 <h2>Oralyn</h2>
-                <p>Excellence in Dental Care</p>
+                <p>{t.excellenceInDentalCare}</p>
               </div>
-              <p className="footer-description">
-                Providing world-class dental treatments with cutting-edge
-                technology and personalized care for every patient.
-              </p>
+              <p className="footer-description">{t.providingWorldClass}</p>
               <div className="social-links">
                 <a href="#" aria-label="Facebook">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -69,55 +69,52 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="footer-section">
-              <h4>Quick Links</h4>
+              <h4>{t.quickLinks}</h4>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/">{t.home}</Link>
                 </li>
                 <li>
-                  <Link to="/about">About Us</Link>
+                  <Link to="/about">{t.aboutUs}</Link>
                 </li>
                 <li>
-                  <Link to="/services">Services</Link>
+                  <Link to="/services">{t.services}</Link>
                 </li>
                 <li>
-                  <Link to="/doctors">Our Doctors</Link>
+                  <Link to="/doctors">{t.ourDoctors}</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <Link to="/contact">{t.contact}</Link>
                 </li>
               </ul>
             </div>
 
             <div className="footer-section">
-              <h4>Services</h4>
+              <h4>{t.services}</h4>
               <ul>
                 <li>
-                  <a href="#">General Dentistry</a>
+                  <a href="#">{t.generalDentistry}</a>
                 </li>
                 <li>
-                  <a href="#">Cosmetic Dentistry</a>
+                  <a href="#">{t.cosmeticDentistry}</a>
                 </li>
                 <li>
-                  <a href="#">Orthodontics</a>
+                  <a href="#">{t.orthodontics}</a>
                 </li>
                 <li>
-                  <a href="#">Oral Surgery</a>
+                  <a href="#">{t.oralSurgery}</a>
                 </li>
                 <li>
-                  <a href="#">Pediatric Dentistry</a>
+                  <a href="#">{t.pediatricDentistry}</a>
                 </li>
               </ul>
             </div>
 
             <div className="footer-section contact-section">
-              <h4>Get In Touch</h4>
-              <p className="contact-description">
-                Ready to schedule your appointment? We're here to help you
-                achieve your perfect smile.
-              </p>
+              <h4>{t.getInTouch}</h4>
+              <p className="contact-description">{t.readyToSchedule}</p>
               <Link to="/contact" className="contact-cta-button">
-                Book Appointment
+                {t.bookAppointment}
               </Link>
             </div>
           </div>
@@ -127,11 +124,11 @@ const Footer: React.FC = () => {
       <div className="footer-bottom">
         <div className="container">
           <div className="bottom-content">
-            <p>&copy; 2024 Oralyn Dental Care. All rights reserved.</p>
+            <p>{t.allRightsReserved}</p>
             <div className="footer-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Cookie Policy</a>
+              <a href="#">{t.privacyPolicy}</a>
+              <a href="#">{t.termsOfService}</a>
+              <a href="#">{t.cookiePolicy}</a>
             </div>
           </div>
         </div>

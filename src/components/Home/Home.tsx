@@ -1,22 +1,23 @@
 import React from "react";
 import "./home.css";
 import { Analysis } from "../Analysis/Analysis";
+import { useLanguage } from "../../contexts/useLanguage";
+import { translations } from "../../constants/translations";
+import { Link } from "react-router-dom";
+
 const Home: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <>
       <main className="hero-section">
         <div className="hero-content">
-          <h2 className="hero-title">
-            Transforming Smiles With Precision & Care
-          </h2>
-          <p className="hero-description">
-            Experience modern dentistry designed for every smile. From routine
-            checkups to advanced treatments, we make your dental health simple
-            and stress-free.
-          </p>
-          <a href="#" className="cta-btn">
-            Book Appointment →
-          </a>
+          <h2 className="hero-title">{t.heroTitle}</h2>
+          <p className="hero-description">{t.heroDescription}</p>
+          <Link to="/contact" className="cta-btn">
+            {t.bookAppointment} →
+          </Link>
         </div>
         <div className="hero-media">
           <div className="hero-image-container">

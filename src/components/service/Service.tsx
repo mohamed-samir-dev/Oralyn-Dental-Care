@@ -2,6 +2,8 @@ import React from "react";
 import "./Service.css";
 import type { ServiceProps } from "../../types/index";
 import { SERVICES_DATA } from "../../constants";
+import { useLanguage } from "../../contexts/useLanguage";
+import { translations } from "../../constants/translations";
 
 /**
  * Service Component
@@ -11,6 +13,9 @@ import { SERVICES_DATA } from "../../constants";
  * @returns JSX.Element
  */
 const Service: React.FC<ServiceProps> = ({ className = "" }) => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section
       className={`service-section ${className}`}
@@ -20,17 +25,15 @@ const Service: React.FC<ServiceProps> = ({ className = "" }) => {
         {/* Service Header Section */}
         <header className="service-header">
           <h2 id="services-heading" className="service-title">
-            Transform Your Smile with Expert Care
+            {t.transformSmileTitle}
           </h2>
 
           <p className="service-description">
-            Experience world-class dental treatments with our team of
-            specialists. We combine cutting-edge technology with personalized
-            care to deliver exceptional results for every patient.
+            {t.transformSmileDescription}
           </p>
 
           <button className="cta-btn" aria-label="Explore our dental services">
-            Explore Our Services →
+            {t.exploreServices} →
           </button>
         </header>
 
@@ -40,24 +43,37 @@ const Service: React.FC<ServiceProps> = ({ className = "" }) => {
           role="list"
           aria-label="Available dental services"
         >
-          {SERVICES_DATA.map((service) => (
-            <article key={service.id} className="service-card" role="listitem">
-              <div className="card-icon" aria-hidden="true">
-                <img
-                  src={service.icon}
-                  alt={service.alt}
-                  loading="lazy"
-                  width="28"
-                  height="28"
-                />
-              </div>
-
-              <div className="card-content">
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </div>
-            </article>
-          ))}
+          <article className="service-card" role="listitem">
+            <div className="card-icon" aria-hidden="true">
+              <img
+                src="/dental-care.png"
+                alt="General Dentistry Icon"
+                loading="lazy"
+                width="28"
+                height="28"
+              />
+            </div>
+            <div className="card-content">
+              <h3>{t.generalDentistry}</h3>
+              <p>{t.generalDentistryDesc}</p>
+            </div>
+          </article>
+          
+          <article className="service-card" role="listitem">
+            <div className="card-icon" aria-hidden="true">
+              <img
+                src="/dental-implant.png"
+                alt="Restorative Dentistry Icon"
+                loading="lazy"
+                width="28"
+                height="28"
+              />
+            </div>
+            <div className="card-content">
+              <h3>{t.restorativeDentistry}</h3>
+              <p>{t.restorativeDentistryDesc}</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>

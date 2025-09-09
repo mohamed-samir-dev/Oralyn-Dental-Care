@@ -8,12 +8,17 @@ import {
   faInfoCircle,
   faCog,
   faUserMd,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useLanguage } from "../../contexts/useLanguage";
+import { translations } from "../../constants/translations.ts";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, toggleLanguage, isArabic } = useLanguage();
+  const t = translations[language];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -30,31 +35,37 @@ export const Header: React.FC = () => {
           <li>
             <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
               <FontAwesomeIcon icon={faHome} className="nav-icon" />
-              Home
+              {t.home}
             </NavLink>
           </li>
           <li>
             <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
               <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
-              About
+              {t.about}
             </NavLink>
           </li>
           <li>
             <NavLink to="/services" onClick={() => setIsMenuOpen(false)}>
               <FontAwesomeIcon icon={faCog} className="nav-icon" />
-              Services
+              {t.services}
             </NavLink>
           </li>
           <li>
             <NavLink to="/doctors" onClick={() => setIsMenuOpen(false)}>
               <FontAwesomeIcon icon={faUserMd} className="nav-icon" />
-              Doctors
+              {t.doctors}
             </NavLink>
           </li>
         </ul>
-        <button className="cta-button">
-          <Link to="/contact">Contact →</Link>
-        </button>
+        <div className="header-actions">
+          <button className="language-btn" onClick={toggleLanguage}>
+            <FontAwesomeIcon icon={faGlobe} />
+            {isArabic ? "EN" : "عربي"}
+          </button>
+          <button className="cta-button">
+            <Link to="/contact">{t.contact} →</Link>
+          </button>
+        </div>
         <FontAwesomeIcon
           icon={isMenuOpen ? faTimes : faBars}
           className="mobile-menu-icon"

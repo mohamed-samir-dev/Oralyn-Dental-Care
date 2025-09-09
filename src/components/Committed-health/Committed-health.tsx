@@ -1,7 +1,12 @@
 import React from "react";
 import "./Committed-health.css";
+import { useLanguage } from "../../contexts/useLanguage";
+import { translations } from "../../constants/translations";
 
 const CommittedHealth: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section className="committed-health-section">
       <div className="container">
@@ -13,16 +18,15 @@ const CommittedHealth: React.FC = () => {
           />
         </div>
         <div className="committed-health-content">
-          <h2>Committed to Excellence in Dental Care</h2>
+          <h2>{t.committedExcellence}</h2>
           <p>
-            At Oralyn Dental Care, we have been dedicated to helping patients
-            achieve healthy, beautiful smiles for over a decade.
+            {t.committedDescription}
           </p>
           <button
             className="health-cta-btn"
             aria-label="Learn more about our comprehensive dental services"
           >
-            Learn More →
+            {t.learnMore} →
           </button>{" "}
           <div className="committed-health-gallery">
             <div className="image-grid">
@@ -39,9 +43,7 @@ const CommittedHealth: React.FC = () => {
             </div>
             <div className="image-content">
               <p>
-                Our commitment to excellence is reflected in our
-                state-of-the-art facilities, advanced dental equipment, and
-                personalized care.
+                {t.modernFacilities}
               </p>
             </div>
           </div>

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "./Contact.css";
+import { useLanguage } from "../../contexts/useLanguage";
+import { translations } from "../../constants/translations";
 
 const Contact: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,14 +34,12 @@ const Contact: React.FC = () => {
     <section className="contact-section">
       <div className="container">
         <div className="contact-header">
-          <p className="contact-subtitle">Get In Touch</p>
+          <p className="contact-subtitle">{t.getInTouch}</p>
           <h2 className="contact-title">
-            Schedule Your <span className="title-highlight">Consultation</span>
+            {t.scheduleConsultation}
           </h2>
           <p className="contact-description">
-            Ready to transform your smile? Contact our expert team today to book
-            your personalized consultation and take the first step toward
-            optimal dental health.
+            {t.contactDescription}
           </p>
         </div>
 
@@ -45,7 +47,7 @@ const Contact: React.FC = () => {
           <div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Full Name</label>
+                <label htmlFor="name">{t.fullName}</label>
                 <input
                   type="text"
                   id="name"
@@ -58,7 +60,7 @@ const Contact: React.FC = () => {
 
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="email">Email Address</label>
+                  <label htmlFor="email">{t.emailAddress}</label>
                   <input
                     type="email"
                     id="email"
@@ -69,7 +71,7 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="phone">Phone Number</label>
+                  <label htmlFor="phone">{t.phoneNumber}</label>
                   <input
                     type="tel"
                     id="phone"
@@ -82,7 +84,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="service">Service Interested In</label>
+                <label htmlFor="service">{t.serviceInterestedIn}</label>
                 <select
                   id="service"
                   name="service"
@@ -90,25 +92,25 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                 >
-                  <option value="">Select a service</option>
-                  <option value="consultation">General Consultation</option>
-                  <option value="cosmetic">Cosmetic Dentistry</option>
-                  <option value="orthodontics">Orthodontics</option>
-                  <option value="surgery">Oral Surgery</option>
-                  <option value="pediatric">Pediatric Dentistry</option>
-                  <option value="emergency">Emergency Care</option>
+                  <option value="">{t.selectService}</option>
+                  <option value="consultation">{t.generalConsultation}</option>
+                  <option value="cosmetic">{t.cosmeticDentistry}</option>
+                  <option value="orthodontics">{t.orthodontics}</option>
+                  <option value="surgery">{t.oralSurgery}</option>
+                  <option value="pediatric">{t.pediatricDentistry}</option>
+                  <option value="emergency">{t.emergencyCare}</option>
                 </select>
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">{t.message}</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell us about your dental needs or any questions you have..."
+                  placeholder={t.messagePlaceholder}
                 ></textarea>
               </div>
 
@@ -120,7 +122,7 @@ const Contact: React.FC = () => {
                     strokeWidth="2"
                   />
                 </svg>
-                Schedule Appointment
+                {t.scheduleAppointment}
               </button>
             </form>
           </div>
