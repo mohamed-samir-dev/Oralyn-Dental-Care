@@ -1,7 +1,6 @@
 import React from "react";
 import "./Service.css";
 import type { ServiceProps } from "../../types/index";
-import { SERVICES_DATA } from "../../constants";
 import { useLanguage } from "../../contexts/useLanguage";
 import { translations } from "../../constants/translations";
 
@@ -28,9 +27,7 @@ const Service: React.FC<ServiceProps> = ({ className = "" }) => {
             {t.transformSmileTitle}
           </h2>
 
-          <p className="service-description">
-            {t.transformSmileDescription}
-          </p>
+          <p className="service-description">{t.transformSmileDescription}</p>
 
           <button className="cta-btn" aria-label="Explore our dental services">
             {t.exploreServices} →
@@ -58,7 +55,7 @@ const Service: React.FC<ServiceProps> = ({ className = "" }) => {
               <p>{t.generalDentistryDesc}</p>
             </div>
           </article>
-          
+
           <article className="service-card" role="listitem">
             <div className="card-icon" aria-hidden="true">
               <img
