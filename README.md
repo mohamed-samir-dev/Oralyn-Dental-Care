@@ -23,7 +23,7 @@
 
 ### 🏠 Homepage
 
-![Homepage Screenshot](./public/screencapture-localhost-5173-2025-09-09-18_37_28.png)
+![Homepage Screenshot](/public/screencapture-localhost-5173-2025-09-09-18_37_28.png)
 
 ### 🏥 Services Section
 
