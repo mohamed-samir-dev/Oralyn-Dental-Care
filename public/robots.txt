@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oralyn-dental-care.vercel.app/sitemap.xml
