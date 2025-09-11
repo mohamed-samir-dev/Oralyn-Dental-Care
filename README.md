@@ -68,7 +68,8 @@ _Optimized for all devices_
 - **Doctor Profiles**: Professional team presentation
 - **Patient Testimonials**: Real patient feedback and reviews
 - **Contact System**: Easy appointment booking and contact
-- **Multi-language Support**: Internationalization ready
+- **Smart Language Detection**: Automatic Arabic/English based on user location
+- **Multi-language Support**: Full Arabic and English translations
 
 ### 📊 **Performance & Accessibility**
 
@@ -88,6 +89,7 @@ _Optimized for all devices_
 | **Styling**       | CSS3, Tailwind CSS 4.1.13 |
 | **Routing**       | React Router DOM 7.8.2    |
 | **Icons**         | FontAwesome 7.0.1         |
+| **Geolocation**   | IP-based Location Detection|
 | **Linting**       | ESLint 9.33.0             |
 | **Type Checking** | TypeScript 5.8.3          |
 
@@ -167,6 +169,10 @@ src/
 ├── contexts/            # React contexts
 │   ├── LanguageContext.tsx  # Multi-language support
 │   └── useLanguage.ts       # Language hook
+├── middleware/          # Application middleware
+│   └── LanguageMiddleware.tsx # Auto language detection
+├── services/            # External services
+│   └── geolocation.ts   # Location detection service
 ├── hooks/               # Custom React hooks
 │   ├── useCounter.ts    # Counter animations
 │   └── Testimonial.ts   # Testimonial management
@@ -312,6 +318,14 @@ npm run build:analyze
 
 ## 🌐 Features in Detail
 
+### 🌍 **Smart Language Detection**
+
+- Automatic Arabic for users from Egypt and 22 other Arabic countries
+- IP-based geolocation with multiple fallback services
+- 24-hour caching for optimal performance
+- Manual language toggle with preference memory
+- Graceful fallbacks if detection fails
+
 ### 🏥 **Dental Services**
 
 - Comprehensive service catalog
@@ -410,7 +424,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - ✅ Responsive design implementation
 - ✅ TypeScript integration
 - ✅ Accessibility improvements
-- ✅ Multi-language support
+- ✅ Smart geolocation-based language detection
+- ✅ Multi-language support (Arabic/English)
 - ✅ Doctor profile system
 - ✅ Patient testimonials
 - ✅ Contact and booking system
