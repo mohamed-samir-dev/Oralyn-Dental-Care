@@ -279,3 +279,32 @@
     font-size: 12px;
   }
 }
+
+@media (max-width: 380px) {
+  .contact-form-container {
+    margin-right: -10px;
+  }
+}
+
+@media (max-width: 340px) {
+  .contact-form-container {
+    margin-right: -20px;
+  }
+
+  .contact-section .container {
+    padding: 0 10px;
+
+  }
+}
+
+@media (max-width: 310px) {
+  .contact-form-container {
+    margin-right: -10px;
+    padding: 0 10px;
+  }
+
+  .contact-section .container {
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}
